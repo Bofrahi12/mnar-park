@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MNAR PARK — Tanger | Le parc aquatique face à la baie</title>
+<meta name="description" content="Mnar Park Tanger — toboggans géants, piscines, karting et séjour face à la baie de Tanger, Cap Malabata. Concept de démonstration VERTEX WEB.">
+<style>
+:root{--blue:#0756c9;--deep:#04265e;--sky:#19a7e0;--yellow:#ffc61a;--red:#f43f2f;--ink:#06203f;--paper:#f4fbff}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:clip}body{overflow-x:clip}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink)}
+h1,h2,h3,.cond{font-family:'Arial Narrow','Helvetica Neue Condensed',Impact,sans-serif;letter-spacing:.01em}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+/* preloader */
+#loader{position:fixed;inset:0;background:var(--deep);z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:opacity .6s}
+#loader.hide{opacity:0;pointer-events:none}
+#loader .lg{color:#fff;font-size:clamp(30px,6vw,54px);font-weight:900}
+#loader .lg span{color:var(--yellow)}
+#loader .bar{width:180px;height:4px;background:#ffffff2b;border-radius:4px;overflow:hidden}
+#loader .bar i{display:block;height:100%;width:0;background:var(--yellow);transition:width .2s}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 22px;background:linear-gradient(180deg,#02183add,transparent);color:#fff}
+.logo{font-weight:900;font-size:22px;letter-spacing:.04em}
+.logo span{color:var(--yellow)}
+.logo small{display:block;font-size:9px;letter-spacing:.34em;font-weight:600;opacity:.85}
+nav .links{display:flex;gap:26px;font-size:14px;font-weight:600}
+nav .links a{opacity:.92}nav .links a:hover{opacity:1;color:var(--yellow)}
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:800;padding:11px 22px;border-radius:999px;font-size:14px;box-shadow:0 8px 22px #f43f2f55;transition:transform .2s}
+.btn:hover{transform:translateY(-2px) scale(1.02)}
+@media(max-width:760px){nav .links{display:none}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:var(--deep)}
+.hero .bg{position:absolute;inset:0;overflow:hidden}
+.hero .bg img{width:100%;height:100%;object-fit:cover;animation:kenburns 16s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.14) translate(-1.5%,1%)}}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,#02183a33 40%,#02183a26 60%,#02183ae6),linear-gradient(90deg,transparent 55%,#02183a59)}
+.hero .coords{position:absolute;top:84px;left:22px;color:#fff;font-size:11px;letter-spacing:.22em;opacity:.9;z-index:3}
+.hero .coords b{display:block;font-size:13px;letter-spacing:.1em}
+.hero .inner{position:relative;z-index:4;padding:0 22px 118px;text-align:right}
+.hero h1{color:#fff;font-size:clamp(52px,11vw,124px);line-height:.92;font-weight:900;text-transform:uppercase;text-shadow:0 6px 34px #0009}
+.hero h1 .y{color:var(--yellow);display:block}
+.hero p{color:#eaf6ff;font-size:clamp(14px,2vw,18px);max-width:520px;margin:14px 0 0 auto;text-shadow:0 2px 12px #000a}
+.hero .fadeup{opacity:0;transform:translateY(26px);animation:fadeup .9s .3s forwards}
+.hero .fadeup2{opacity:0;transform:translateY(26px);animation:fadeup .9s .55s forwards}
+@keyframes fadeup{to{opacity:1;transform:none}}
+/* ticket pill bar (Thrillwood signature) */
+.pillbar{position:absolute;left:50%;transform:translateX(-50%);bottom:26px;z-index:5;background:var(--blue);color:#fff;border-radius:999px;display:flex;align-items:center;gap:18px;padding:10px 12px 10px 26px;box-shadow:0 18px 40px #02183a66;max-width:min(94vw,860px);flex-wrap:wrap;justify-content:center}
+.pillbar .cell{font-size:13px;line-height:1.35;white-space:nowrap}
+.pillbar .cell b{display:block;font-size:11px;letter-spacing:.14em;opacity:.75;font-weight:700}
+.pillbar .sep{width:1px;height:30px;background:#ffffff38}
+@media(max-width:640px){.pillbar{gap:10px;padding:10px 14px;border-radius:26px}.pillbar .sep{display:none}.hero .inner{padding-bottom:170px;text-align:left}.hero p{margin-left:0}}
+.scrollhint{position:absolute;bottom:30px;left:22px;color:#fff;font-size:11px;letter-spacing:.3em;z-index:5;writing-mode:vertical-rl;opacity:.85}
+@media(max-width:640px){.scrollhint{display:none}}
+/* marquee */
+.marquee{background:#02183a;color:#fff;overflow:hidden;padding:13px 0;border-top:3px solid var(--yellow)}
+.marquee .track{display:flex;gap:44px;white-space:nowrap;font-weight:900;letter-spacing:.14em;font-size:15px;animation:mq 26s linear infinite;width:max-content}
+.marquee .track span i{color:var(--yellow);font-style:normal;margin-right:44px}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* film */
+.filmsec{background:#02183a;color:#fff;position:relative}
+.film-pin{height:100svh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.film-pin canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.film-cap{position:absolute;left:22px;bottom:34px;z-index:3;max-width:min(88vw,480px)}
+.film-cap .num{color:var(--yellow);font-weight:900;letter-spacing:.3em;font-size:13px}
+.film-cap h2{font-size:clamp(34px,6vw,58px);text-transform:uppercase;line-height:.98;margin:6px 0 8px;text-shadow:0 4px 22px #000c}
+.film-cap p{color:#d9efff;font-size:15px;text-shadow:0 2px 10px #000c}
+.film-prog{position:absolute;right:22px;bottom:34px;z-index:3;text-align:right}
+.film-prog .pct{font-size:30px;font-weight:900;color:var(--yellow)}
+.film-prog .track{width:130px;height:4px;background:#ffffff30;border-radius:4px;margin-top:6px;overflow:hidden}
+.film-prog .track i{display:block;height:100%;width:0;background:var(--yellow)}
+/* sections */
+section.blk{padding:84px 22px;max-width:1180px;margin:0 auto}
+.kick{color:var(--blue);font-weight:900;letter-spacing:.28em;font-size:12px;text-transform:uppercase}
+h2.big{font-size:clamp(36px,6vw,60px);text-transform:uppercase;line-height:.98;margin:10px 0 14px}
+h2.big .y{color:var(--blue)}
+.sub{color:#3c5a78;max-width:640px;font-size:16px;line-height:1.55}
+/* attraction cards 3D */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:38px;perspective:1200px}
+.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 14px 34px #06203f17;transform-style:preserve-3d;transition:box-shadow .25s;will-change:transform}
+.card .ph{height:210px;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .ph img{transform:scale(1.07)}
+.card .bd{padding:18px 20px 20px}
+.card h3{font-size:24px;text-transform:uppercase}
+.card p{color:#3c5a78;font-size:14px;line-height:1.5;margin-top:6px}
+.meter{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:11px;font-weight:800;letter-spacing:.12em;color:#7a93ab}
+.meter .dots{display:flex;gap:4px}
+.meter .dots i{width:16px;height:6px;border-radius:3px;background:#dcebf5}
+.meter .dots i.on{background:var(--red)}
+.tag{display:inline-block;background:#e7f4ff;color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.1em;padding:5px 10px;border-radius:999px;margin-top:12px}
+/* coverflow 3D */
+.flowsec{background:linear-gradient(180deg,#eaf6ff,#fff);padding:84px 0 90px;overflow:hidden}
+.flowsec .head{max-width:1180px;margin:0 auto;padding:0 22px}
+.stage3d{margin-top:36px;height:380px;position:relative;perspective:1400px;touch-action:pan-y}
+.cf{position:absolute;left:50%;top:50%;width:min(62vw,480px);aspect-ratio:4/3;border-radius:18px;overflow:hidden;box-shadow:0 24px 50px #06203f38;transform-style:preserve-3d;cursor:grab}
+.cf img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cf figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 12px;color:#fff;font-weight:800;font-size:14px;background:linear-gradient(transparent,#02183acc);letter-spacing:.04em}
+.flowhint{text-align:center;color:#7a93ab;font-size:12px;letter-spacing:.24em;margin-top:8px;font-weight:700}
+/* tickets */
+.tickets{background:var(--deep);color:#fff}
+.tickets .kick{color:var(--yellow)}
+.tickets h2.big .y{color:var(--yellow)}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:38px;perspective:1200px}
+.tcard{background:linear-gradient(160deg,#0a3a7d,#062a5e);border:1px solid #ffffff22;border-radius:22px;padding:28px 24px;transform-style:preserve-3d;will-change:transform}
+.tcard.hot{background:linear-gradient(160deg,var(--blue),#0a3a7d);border-color:var(--yellow)}
+.tcard h3{font-size:20px;text-transform:uppercase;letter-spacing:.06em}
+.tcard .price{font-size:52px;font-weight:900;margin:12px 0 2px}
+.tcard .price small{font-size:16px;color:var(--yellow)}
+.tcard p{color:#bcd8f5;font-size:14px;line-height:1.55}
+.tcard .btn{margin-top:18px}
+.note{color:#8fb3da;font-size:12.5px;margin-top:18px}
+/* plus */
+.plusgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:34px}
+.plus{background:#fff;border-radius:16px;padding:22px;box-shadow:0 10px 26px #06203f10}
+.plus .ic{font-size:30px}
+.plus h3{font-size:19px;text-transform:uppercase;margin:10px 0 6px}
+.plus p{color:#3c5a78;font-size:13.5px;line-height:1.5}
+/* infos */
+.infos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:34px}
+.info{background:#fff;border-radius:16px;padding:24px;box-shadow:0 10px 26px #06203f10}
+.info h3{font-size:18px;text-transform:uppercase;margin-bottom:8px}
+.info p,.info a{color:#3c5a78;font-size:14.5px;line-height:1.6}
+.info a{color:var(--blue);font-weight:700}
+/* footer */
+footer{background:#02183a;color:#bcd8f5;padding:44px 22px 34px;text-align:center}
+footer .logo{color:#fff;font-size:26px}
+footer p{font-size:13px;line-height:1.7;max-width:640px;margin:12px auto 0}
+footer .demo{display:inline-block;border:1px solid #ffc61a66;color:var(--yellow);border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;margin-top:16px}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:120;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:27px;box-shadow:0 12px 28px #02183a4d}
+</style>
+</head>
+<body>
+<div id="loader"><div class="lg">MNAR <span>PARK</span></div><div class="bar"><i id="loadbar"></i></div><div style="color:#8fb3da;font-size:12px;letter-spacing:.26em">TANGER · CAP MALABATA</div></div>
+
+<nav>
+  <div class="logo">MNAR <span>PARK</span><small>TANGER — AQUA PARK</small></div>
+  <div class="links"><a href="#attractions">Attractions</a><a href="#film">Le ride</a><a href="#billets">Billetterie</a><a href="#plus">Séjour &amp; food</a><a href="#infos">Infos</a></div>
+  <a class="btn" href="#billets">Billets</a>
+</nav>
+
+<header class="hero">
+  <div class="bg"><img src="img/hero.jpg" alt="Mnar Park Tanger — le grand entonnoir et les piscines, photo réelle du parc"></div>
+  <div class="shade"></div>
+  <div class="coords"><b>35.808° N — 5.749° W</b>CAP MALABATA · BAIE DE TANGER</div>
+  <div class="inner">
+    <h1 class="fadeup">Ça, c'est<span class="y">Mnar Park.</span></h1>
+    <p class="fadeup2">Le parc aquatique de Tanger, les pieds dans la baie : un entonnoir géant, des courses arc-en-ciel et des piscines face à la mer. Votre site devrait donner la même sensation que l'attraction.</p>
+  </div>
+  <div class="scrollhint">SCROLL — LE RIDE COMMENCE ↓</div>
+  <div class="pillbar">
+    <div class="cell"><b>OUVERT</b>Tous les jours · 07:00 – 23:00</div><div class="sep"></div>
+    <div class="cell"><b>ADULTE</b>220 DH</div><div class="sep"></div>
+    <div class="cell"><b>ENFANT −120 CM</b>120 DH</div>
+    <a class="btn" href="#billets">Acheter vos billets</a>
+  </div>
+</header>
+
+<div class="marquee"><div class="track" id="mqtrack"></div></div>
+
+<div class="filmsec" id="film">
+  <div class="film-pin" id="filmpin">
+    <canvas id="filmcanvas"></canvas>
+    <div class="film-cap"><div class="num" id="capnum">01 / 05 — SURVOL</div><h2 id="captitle">La baie de Tanger</h2><p id="capp">On décolle au-dessus du parc, face à la mer.</p></div>
+    <div class="film-prog"><div class="pct" id="filmpct">0%</div><div class="track"><i id="filmbar"></i></div></div>
+  </div>
+</div>
+
+<section class="blk" style="padding-bottom:0">
+  <div class="kick">Film FPV</div>
+  <h2 class="big">Le survol <span class="y">du parc</span></h2>
+  <p class="sub">Le même vol FPV que le scroll-film ci-dessus, en lecture directe — construit à partir de vraies photos de Mnar Park.</p>
+  <video src="film/fpv-film.mp4" poster="img/racer.jpg" controls muted loop playsinline autoplay style="width:100%;border-radius:20px;margin-top:26px;box-shadow:0 18px 44px #06203f26"></video>
+</section>
+
+<section class="blk" id="attractions">
+  <div class="kick">Attractions</div>
+  <h2 class="big">Choisissez votre <span class="y">sensations</span></h2>
+  <p class="sub">Toutes les photos de cette page sont de vraies photos de Mnar Park — l'entonnoir bleu et jaune, le Windigo arc-en-ciel et le Kamikaze que les Tangérois connaissent par cœur.</p>
+  <div class="grid" id="cardgrid">
+    <article class="card tilt"><div class="ph"><img src="img/funnel.jpg" alt="Le Funnel géant de Mnar Park, photo réelle"></div><div class="bd"><h3>Le Funnel géant</h3><p>L'emblème du parc : on tourbillonne dans l'immense entonnoir bleu et jaune avant de plonger dans le bassin.</p><div class="meter">INTENSITÉ <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><span class="tag">L'ICÔNE DU PARC</span></div></article>
+    <article class="card tilt"><div class="ph"><img src="img/racer.jpg" alt="Windigo, la course multilane arc-en-ciel de Mnar Park, photo réelle"></div><div class="bd"><h3>Windigo arc-en-ciel</h3><p>Huit pistes, un tapis, la tête la première : la course entre amis qui finit toujours en revanche.</p><div class="meter">INTENSITÉ <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div><span class="tag">COURSE EN GROUPE</span></div></article>
+    <article class="card tilt"><div class="ph"><img src="img/kamikaze.jpg" alt="Kamikaze et toboggan spirale de Mnar Park, photo réelle"></div><div class="bd"><h3>Kamikaze &amp; Spirale</h3><p>La chute presque verticale, orange et jaune, juste à côté du grand toboggan spirale rouge et blanc. Le cœur d'abord, le cri après.</p><div class="meter">INTENSITÉ <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><span class="tag">ADRÉNALINE PURE</span></div></article>
+    <article class="card tilt"><div class="ph"><img src="img/pool.jpg" alt="Grand bassin et tour AquaLoop de Mnar Park, photo réelle"></div><div class="bd"><h3>Grand bassin &amp; AquaLoop</h3><p>Le grand bassin bleu turquoise et la tour des grands toboggans, avec le Windigo et l'AquaLoop pour les plus courageux.</p><div class="meter">INTENSITÉ <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div><span class="tag">EN FAMILLE</span></div></article>
+    <article class="card tilt"><div class="ph"><img src="img/aerial.jpg" alt="Vue aérienne réelle de Mnar Park et de la baie de Tanger"></div><div class="bd"><h3>La vue sur la baie</h3><p>Un parc posé entre palmiers et Méditerranée : depuis le haut des toboggans, Tanger brille en face.</p><div class="meter">INTENSITÉ <span class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></span></div><span class="tag">PANORAMA</span></div></article>
+    <article class="card tilt"><div class="ph"><img src="img/sunset.jpg" alt="Mnar Park au coucher du soleil, photo réelle"></div><div class="bd"><h3>Le parc au couchant</h3><p>En fin de journée, les piscines se vident doucement et le parc s'illumine face au détroit.</p><div class="meter">INTENSITÉ <span class="dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div><span class="tag">DÉTENTE</span></div></article>
+  </div>
+</section>
+
+<div class="flowsec">
+  <div class="head"><div class="kick">Galerie 3D</div><h2 class="big">Le parc en vrai, <span class="y">en 3D</span></h2><p class="sub">Faites glisser la galerie : chaque carte est une vraie photo de Mnar Park.</p></div>
+  <div class="stage3d" id="stage3d">
+    <figure class="cf"><img src="img/hero.jpg" alt="Mnar Park — photo réelle"><figcaption>Le Funnel &amp; les piscines</figcaption></figure>
+    <figure class="cf"><img src="img/racer2.jpg" alt="Windigo Mnar Park — photo réelle"><figcaption>Windigo — la course arc-en-ciel</figcaption></figure>
+    <figure class="cf"><img src="img/kamikaze.jpg" alt="Kamikaze Mnar Park — photo réelle"><figcaption>Kamikaze &amp; Spirale</figcaption></figure>
+    <figure class="cf"><img src="img/pool.jpg" alt="Grand bassin Mnar Park — photo réelle"><figcaption>Le grand bassin</figcaption></figure>
+    <figure class="cf"><img src="img/aerial.jpg" alt="Vue aérienne Mnar Park — photo réelle"><figcaption>Vue sur la baie de Tanger</figcaption></figure>
+    <figure class="cf"><img src="img/sunset.jpg" alt="Coucher de soleil Mnar Park — photo réelle"><figcaption>Le parc au couchant</figcaption></figure>
+  </div>
+  <div class="flowhint">← GLISSER POUR TOURNER →</div>
+</div>
+
+<section class="tickets" id="billets"><div style="max-width:1180px;margin:0 auto;padding:84px 22px">
+  <div class="kick">Billetterie</div>
+  <h2 class="big">Prêt pour <span class="y">le ride ?</span></h2>
+  <p style="color:#bcd8f5;max-width:600px;line-height:1.55">Une journée complète : toboggans, piscines et espace enfants. Les billets se prennent à l'accueil du parc, à Cap Malabata.</p>
+  <div class="tgrid">
+    <div class="tcard tilt"><h3>Adulte</h3><div class="price">220 <small>DH</small></div><p>Plus de 120 cm — accès journée complète aux toboggans et piscines.</p><a class="btn" href="tel:+212539343831">Appeler le parc</a></div>
+    <div class="tcard hot tilt"><h3>Enfant</h3><div class="price">120 <small>DH</small></div><p>Moins de 120 cm — espace enfants, pataugeoires et mini-toboggans adaptés.</p><a class="btn" href="tel:+212539343831">Appeler le parc</a></div>
+    <div class="tcard tilt"><h3>Transat</h3><div class="price">40 <small>DH</small></div><p>Le transat pour la journée, entre deux descentes — face aux piscines ou sous les palmiers.</p><a class="btn" href="tel:+212539343831">Appeler le parc</a></div>
+  </div>
+  <p class="note">Tarifs constatés sur place et dans les avis visiteurs récents (été 2026) — à confirmer à l'accueil du parc le jour de la visite.</p>
+</div></section>
+
+<section class="blk" id="plus">
+  <div class="kick">Plus que de l'eau</div>
+  <h2 class="big">Séjour, food <span class="y">&amp; aventure</span></h2>
+  <div class="plusgrid">
+    <div class="plus"><div class="ic">🏎️</div><h3>Karting</h3><p>Un circuit de karting dans le complexe, pour continuer la course hors de l'eau.</p></div>
+    <div class="plus"><div class="ic">🐎</div><h3>Équitation &amp; quad</h3><p>Balades à cheval et sorties quad ou buggy autour du parc, sur demande.</p></div>
+    <div class="plus"><div class="ic">🎯</div><h3>Paintball</h3><p>Des parties de paintball entre amis, dans l'espace loisirs du complexe.</p></div>
+    <div class="plus"><div class="ic">🍽️</div><h3>Restaurant &amp; snack</h3><p>Restaurant et buvette sur place, aux saveurs méditerranéennes — et les fameuses crêpes.</p></div>
+    <div class="plus"><div class="ic">🛏️</div><h3>Appartements</h3><p>43 appartements avec patios, jardins et terrasses pour dormir sur place, face à la mer.</p></div>
+    <div class="plus"><div class="ic">🧒</div><h3>Espace enfants</h3><p>Piscine enfants et jeux adaptés aux plus petits, à côté des grands bassins.</p></div>
+  </div>
+</section>
+
+<section class="blk" id="infos" style="padding-top:10px">
+  <div class="kick">Infos pratiques</div>
+  <h2 class="big">Venir à <span class="y">Mnar Park</span></h2>
+  <div class="infos">
+    <div class="info"><h3>📍 Adresse</h3><p>Km 8, Cap Malabata<br>Route de Ksar Sghir<br>90000 Tanger, Maroc</p><p style="margin-top:8px"><a href="https://www.google.com/maps/search/?api=1&amp;query=Mnar+Park+Tanger" target="_blank" rel="noopener">Itinéraire Google Maps →</a></p></div>
+    <div class="info"><h3>📞 Contact</h3><p>Accueil du parc :<br><a href="tel:+212539343831">+212 539 343 831</a></p><p style="margin-top:8px">Réception ouverte 24h/24 pour les résidents.</p></div>
+    <div class="info"><h3>🕖 Horaires &amp; séjour</h3><p>Parc ouvert tous les jours, 07:00 – 23:00.<br>Check-in appartements : 15:00 · Check-out : 12:00.<br>Parking gratuit sur place, Wi-Fi dans les espaces publics.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">MNAR <span style="color:var(--yellow)">PARK</span></div>
+  <p>Le parc aquatique de Cap Malabata — toboggans, piscines, karting et séjour face à la baie de Tanger.</p>
+  <div class="demo">CONCEPT DE DÉMONSTRATION — RÉALISÉ PAR VERTEX WEB · SITE NON OFFICIEL · PHOTOS RÉELLES DU PARC (SOURCES PUBLIQUES)</div>
+  <p style="margin-top:16px">Vous gérez Mnar Park ? Ce concept peut devenir votre site officiel.<br>VERTEX WEB — Tanger · <a href="https://wa.me/212693981822" style="color:var(--yellow);font-weight:700">WhatsApp 0693 981 822</a></p>
+</footer>
+
+<a class="wa-float" href="https://wa.me/212693981822?text=Bonjour%20VERTEX%20WEB%2C%20je%20veux%20parler%20du%20concept%20Mnar%20Park" aria-label="WhatsApp VERTEX WEB">💬</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* loader */
+let lp=0;const li=setInterval(()=>{lp=Math.min(100,lp+Math.random()*22);document.getElementById('loadbar').style.width=lp+'%';if(lp>=100){clearInterval(li);setTimeout(()=>document.getElementById('loader').classList.add('hide'),250)}},160);
+/* marquee */
+const words=['TOBOGGANS GÉANTS','PISCINES','WINDIGO','KAMIKAZE','KARTING','ÉQUITATION','PAINTBALL','RESTAURANT','FACE À LA BAIE'];
+const half=words.map(w=>`<span>${w}<i>✦</i></span>`).join('');
+document.getElementById('mqtrack').innerHTML=half+half;
+/* FPV scroll film: canvas frames drawn by scroll progress, never video-seek */
+const NFRAMES=110,frames=[];let loaded=0;
+const cv=document.getElementById('filmcanvas'),cx=cv.getContext('2d');
+function sizeCanvas(){const r=cv.parentElement.getBoundingClientRect();cv.width=r.width;cv.height=r.height;draw(cur)}
+function draw(i){const im=frames[i];if(!im)return;const s=Math.max(cv.width/im.width,cv.height/im.height);const w=im.width*s,h=im.height*s;cx.drawImage(im,(cv.width-w)/2,(cv.height-h)/2,w,h)}
+let cur=0,shown=-1;
+for(let i=0;i<NFRAMES;i++){const im=new Image();im.src=`film/frames/f${String(i).padStart(3,'0')}.webp`;im.onload=()=>{loaded++;if(loaded===1){sizeCanvas()}};frames.push(im)}
+const caps=[
+ {n:'01 / 05 — SURVOL',t:'La baie de Tanger',p:"On décolle au-dessus du parc, face à la mer."},
+ {n:'02 / 05 — LE FUNNEL',t:"L'entonnoir géant",p:'Le grand tourbillon bleu et jaune, emblème de Mnar Park.'},
+ {n:'03 / 05 — WINDIGO',t:'La course arc-en-ciel',p:'Huit pistes, la tête la première, droit dans le bassin.'},
+ {n:'04 / 05 — KAMIKAZE',t:'La chute libre',p:'Orange, verticale, inoubliable.'},
+ {n:'05 / 05 — LE COUCHANT',t:'Le parc sallume',p:'Dernière descente, le soleil tombe sur le détroit.'}];
+caps[4].t='Le parc s\u2019illumine';
+let capIdx=-1;
+function setCap(p){const i=Math.min(4,Math.floor(p*5));if(i===capIdx)return;capIdx=i;const c=caps[i];const el=document.querySelector('.film-cap');gsap.fromTo(el,{opacity:0,y:16},{opacity:1,y:0,duration:.45});document.getElementById('capnum').textContent=c.n;document.getElementById('captitle').textContent=c.t;document.getElementById('capp').textContent=c.p}
+if(window.gsap&&window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);
+ ScrollTrigger.create({trigger:'#filmpin',start:'top top',end:'+=2600',pin:true,scrub:false,onUpdate:self=>{const p=self.progress;document.getElementById('filmpct').textContent=Math.round(p*100)+'%';document.getElementById('filmbar').style.width=(p*100)+'%';setCap(p);const target=Math.min(NFRAMES-1,Math.floor(p*NFRAMES));gsap.to({v:cur},{v:target,duration:.35,ease:'power2.out',overwrite:true,onUpdate:function(){cur=this.targets()[0].v;const i=Math.round(cur);if(i!==shown){shown=i;draw(i)}}})}});
+}else{draw(0)}
+addEventListener('resize',sizeCanvas);
+/* 3D tilt */
+document.querySelectorAll('.tilt').forEach(el=>{el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`rotateY(${x*14}deg) rotateX(${-y*12}deg) translateZ(6px)`});el.addEventListener('pointerleave',()=>{el.style.transform=''})});
+/* 3D coverflow */
+const cards=[...document.querySelectorAll('.cf')];let ang=0,vel=0,drag=false,sx=0,sa=0;
+function layout(){cards.forEach((c,i)=>{const a=(i/cards.length)*Math.PI*2+ang;const x=Math.sin(a)*430,z=Math.cos(a)*430-430;c.style.transform=`translate(-50%,-50%) translateX(${x}px) translateZ(${z}px) rotateY(${-a*57.29}deg)`;c.style.zIndex=Math.round(Math.cos(a)*100)+100;c.style.opacity=.45+((Math.cos(a)+1)/2)*.55})}
+layout();
+const st=document.getElementById('stage3d');
+st.addEventListener('pointerdown',e=>{drag=true;sx=e.clientX;sa=ang;st.setPointerCapture(e.pointerId)});
+st.addEventListener('pointermove',e=>{if(!drag)return;ang=sa+(e.clientX-sx)*.005;layout()});
+st.addEventListener('pointerup',()=>drag=false);st.addEventListener('pointercancel',()=>drag=false);
+(function spin(){if(!drag){ang+=.0016;layout()}requestAnimationFrame(spin)})();
+</script>
+</body>
+</html>
