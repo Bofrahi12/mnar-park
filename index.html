@@ -197,6 +197,59 @@ footer{padding-bottom:120px}
 @media(max-width:760px){.chap{grid-template-columns:1fr}.chap.flip .ph{order:0}.chap .ph{min-height:210px}}
 .vidgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:34px}.vid{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 34px #06203f14}.vid .fr{position:relative;padding-top:56.25%}.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.vid p{padding:14px 18px;font-weight:700;font-size:14.5px;color:#0a2d55}.vid p span{display:block;font-weight:400;color:#5b7a9c;font-size:12.5px;margin-top:3px}
 </style>
+<style id="mvx-css">
+/* ===== VERTEX Motion Pack × Mnar Park (modules préfixés mvx-, autonomes) ===== */
+#mouvement{background:var(--paper);color:var(--ink);position:relative}
+.mvx-head{max-width:1100px;margin:0 auto;padding:70px 20px 6px;text-align:center}
+.mvx-head .k{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);font-weight:700}
+.mvx-head h2{font-size:clamp(30px,6vmin,54px);line-height:1.02;margin:10px 0 8px;color:var(--deep)}
+.mvx-head h2 span{color:var(--red)}
+.mvx-head p{opacity:.75;max-width:60ch;margin:0 auto;line-height:1.55}
+.mvx-scene{position:relative}
+.mvx-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.mvx-tag{position:absolute;top:86px;left:20px;z-index:30;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);font-weight:700}
+.mvx-tag b{display:block;font-size:clamp(19px,3.2vmin,30px);letter-spacing:.01em;color:var(--deep);margin-top:3px}
+.mvx-idx{position:absolute;top:86px;right:20px;z-index:30;font-size:11px;letter-spacing:.2em;color:var(--ink);opacity:.55}
+.mvx-tile{position:absolute;border-radius:14px;overflow:hidden;background-size:cover;background-position:center;box-shadow:0 18px 40px rgba(4,30,80,.28);will-change:transform,opacity}
+.mvx-tile i{position:absolute;left:0;right:0;bottom:0;font-style:normal;font-weight:800;color:#fff;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:16px 12px 9px;background:linear-gradient(transparent,rgba(2,20,50,.72))}
+/* tunnel */
+#mvx-tunnel .mvx-stage{perspective:950px;perspective-origin:50% 46%;background:radial-gradient(120% 90% at 50% 40%,#ffffff 0%,#e8f4fc 55%,#cfe7f7 100%)}
+#mvx-tunnel .mvx-tile{width:29vmin;height:40vmin;top:50%;left:50%}
+#mvx-tunnel .mvx-vanish{position:absolute;left:50%;top:46%;width:10px;height:10px;margin:-5px;border-radius:50%;background:#fff;box-shadow:0 0 60px 30px rgba(255,255,255,.95);z-index:1}
+#mvx-tunnel .mvx-cap{position:absolute;bottom:14vh;left:0;right:0;text-align:center;z-index:5;font-size:11px;letter-spacing:.3em;opacity:.55;text-transform:uppercase}
+/* orbit */
+#mvx-orbit .mvx-stage{background:radial-gradient(90% 90% at 50% 45%,#ffffff,#e2f1fb)}
+#mvx-orbit .mvx-tile{width:15vmin;height:19vmin;top:50%;left:50%}
+#mvx-orbit .mvx-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;z-index:5}
+#mvx-orbit .mvx-center .cb{font-size:clamp(28px,5.6vmin,54px);font-weight:900;color:var(--deep);line-height:.98}
+#mvx-orbit .mvx-center .cb span{color:var(--red)}
+#mvx-orbit .mvx-center .cs{font-size:11px;letter-spacing:.26em;opacity:.6;margin-top:8px;text-transform:uppercase}
+/* scatter */
+#mvx-scatter .mvx-wrap{position:relative;height:150vh}
+#mvx-scatter .mvx-stage{height:100vh}
+.mvx-blk{position:absolute;border-radius:14px;overflow:hidden;background-size:cover;background-position:center;box-shadow:0 16px 36px rgba(4,30,80,.22);will-change:transform;display:flex;align-items:flex-end}
+.mvx-blk i{font-style:normal;font-weight:800;color:#fff;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:14px 12px 8px;background:linear-gradient(transparent,rgba(2,20,50,.7));width:100%}
+.mvx-blk.card{background:var(--yellow);color:var(--ink);align-items:center;justify-content:center;text-align:center;padding:10px}
+.mvx-blk.card .p{font-size:clamp(20px,4vmin,36px);font-weight:900;line-height:1}
+.mvx-blk.card .l{font-size:10px;letter-spacing:.16em;font-weight:700;text-transform:uppercase;opacity:.75;margin-top:5px}
+.mvx-blk.txt{background:#fff;color:var(--deep);align-items:center;justify-content:center;text-align:center;padding:12px;font-weight:800;font-size:clamp(14px,2.6vmin,24px);line-height:1.25}
+/* fisheye */
+#mvx-fisheye .mvx-stage{background:#e9f4fb}
+.mvx-lens{position:relative;width:min(94vw,1200px);height:52vmin;clip-path:url(#mvxLensClip);background:var(--deep);overflow:hidden}
+.mvx-track{position:absolute;top:0;left:0;height:100%;display:flex;gap:1.2vmin;will-change:transform}
+.mvx-panel{position:relative;height:100%;width:38vmin;flex:0 0 auto;background-size:cover;background-position:center;display:flex;align-items:flex-end}
+.mvx-panel i{font-style:normal;font-weight:800;color:#fff;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:16px 14px 12px;background:linear-gradient(transparent,rgba(2,20,50,.72));width:100%}
+/* wavy */
+#mvx-wavy .mvx-stage{background:linear-gradient(180deg,#f4fbff,#dff1fc)}
+#mvx-wavy svg.mvx-waves{position:absolute;inset:0;width:100%;height:100%}
+.mvx-centerCard{position:relative;z-index:3;width:27vmin;height:39vmin;border-radius:16px;overflow:hidden;background-size:cover;background-position:center;box-shadow:0 24px 50px rgba(4,30,80,.3);display:flex;align-items:flex-end}
+.mvx-centerCard i{font-style:normal;font-weight:900;color:#fff;font-size:clamp(15px,2.6vmin,24px);letter-spacing:.1em;padding:18px 14px 12px;background:linear-gradient(transparent,rgba(2,20,50,.75));width:100%;text-transform:uppercase}
+/* cascade */
+#mvx-cascade .mvx-stage{background:radial-gradient(100% 100% at 30% 20%,#ffffff,#e0f0fa)}
+.mvx-card{position:absolute;width:24vmin;height:31vmin;border-radius:14px;overflow:hidden;background-size:cover;background-position:center;box-shadow:0 20px 44px rgba(4,30,80,.28);will-change:transform;display:flex;align-items:flex-end}
+.mvx-card i{font-style:normal;font-weight:800;color:#fff;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:16px 12px 9px;background:linear-gradient(transparent,rgba(2,20,50,.72));width:100%}
+@media (max-width:560px){ .mvx-tag{top:74px} .mvx-idx{top:74px} }
+</style>
 </head>
 <body class="notranslate">
 <div id="loader"><div class="lg">MNAR <span>PARK</span></div><div class="bar"><i id="loadbar"></i></div><div style="color:#8fb3da;font-size:12px;letter-spacing:.26em">TANGER · CAP MALABATA</div></div>
@@ -359,6 +412,73 @@ footer{padding-bottom:120px}
   </div>
 </section>
 
+
+<!-- ===== VERTEX MOTION PACK × MNAR PARK ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<clipPath id="mvxLensClip" clipPathUnits="objectBoundingBox"><path d="M0,0.16 Q0.5,0.34 1,0.16 L1,0.84 Q0.5,0.66 0,0.84 Z"/></clipPath>
+<linearGradient id="mvxWL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#19a7e0"/><stop offset=".55" stop-color="#0756c9"/><stop offset="1" stop-color="#04265e"/></linearGradient>
+<linearGradient id="mvxWR" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc61a"/><stop offset=".55" stop-color="#f43f2f"/><stop offset="1" stop-color="#7a0e02"/></linearGradient>
+</defs></svg>
+
+<div id="mouvement">
+  <div class="mvx-head">
+    <div class="k">Vertex Motion Pack</div>
+    <h2>Le parc <span>en mouvement</span></h2>
+    <p>Six sections animées au scroll — tunnel 3D, orbite, collage, ruban fisheye, panneaux liquides et cascade — appliquées aux photos réelles du parc. Faites défiler.</p>
+  </div>
+
+  <section class="mvx-scene" id="mvx-tunnel" data-name="Tunnel" style="height:280vh">
+    <div class="mvx-stage">
+      <div class="mvx-tag">Section<b>TUNNEL 3D</b></div><div class="mvx-idx">LES ATTRACTIONS DÉFILANT</div>
+      <div class="mvx-vanish"></div><div class="mvx-cap">Le scroll fait voler la caméra entre les attractions</div>
+    </div>
+  </section>
+
+  <section class="mvx-scene" id="mvx-orbit" data-name="Orbit" style="height:260vh">
+    <div class="mvx-stage">
+      <div class="mvx-tag">Section<b>ORBIT</b></div><div class="mvx-idx">TOUTES LES ACTIVITÉS</div>
+      <div class="mvx-center"><div class="cb">MNAR<br><span>PARK</span></div><div class="cs">L'anneau tourne avec le scroll</div></div>
+    </div>
+  </section>
+
+  <section class="mvx-scene" id="mvx-scatter" data-name="Scatter">
+    <div class="mvx-wrap"><div class="mvx-stage">
+      <div class="mvx-tag">Section<b>SCATTER</b></div><div class="mvx-idx">COLLAGE PARALLAXE</div>
+      <div class="mvx-blk" data-sp="1.5" data-r="-4" style="left:8%;top:16%;width:24vmin;height:30vmin;background-image:url(img/pool.jpg)"><i>Piscines</i></div>
+      <div class="mvx-blk" data-sp="0.7" data-r="2" style="left:38%;top:12%;width:22vmin;height:26vmin;background-image:url(img/funnel.jpg)"><i>Le Funnel</i></div>
+      <div class="mvx-blk card" data-sp="1.9" data-r="5" style="left:68%;top:14%;width:17vmin;height:17vmin"><div><div class="p">220 DH</div><div class="l">Adulte</div></div></div>
+      <div class="mvx-blk" data-sp="0.9" data-r="3" style="left:14%;top:52%;width:20vmin;height:24vmin;background-image:url(img/racer.jpg)"><i>Racer</i></div>
+      <div class="mvx-blk card" data-sp="1.2" data-r="-2" style="left:42%;top:50%;width:17vmin;height:17vmin"><div><div class="p">120 DH</div><div class="l">Enfant −120 cm</div></div></div>
+      <div class="mvx-blk" data-sp="1.7" data-r="4" style="left:66%;top:48%;width:23vmin;height:27vmin;background-image:url(img/sunset.jpg)"><i>Coucher de soleil</i></div>
+      <div class="mvx-blk txt" data-sp="2.1" data-r="-5" style="left:30%;top:80%;width:24vmin;height:13vmin">Ouvert tous les jours<br>07:00 – 23:00</div>
+      <div class="mvx-blk card" data-sp="1.4" data-r="3" style="left:62%;top:79%;width:15vmin;height:15vmin"><div><div class="p">40 DH</div><div class="l">Transat</div></div></div>
+    </div></div>
+  </section>
+
+  <section class="mvx-scene" id="mvx-fisheye" data-name="Reel Flux" style="height:260vh">
+    <div class="mvx-stage">
+      <div class="mvx-tag">Section<b>REEL FLUX</b></div><div class="mvx-idx">PANORAMA DU PARC</div>
+      <div class="mvx-lens"><div class="mvx-track" id="mvxFluxTrack"></div></div>
+    </div>
+  </section>
+
+  <section class="mvx-scene" id="mvx-wavy" data-name="Wavy" style="height:240vh">
+    <div class="mvx-stage">
+      <div class="mvx-tag">Section<b>WAVY PANELS</b></div><div class="mvx-idx">BORDS LIQUIDES</div>
+      <svg class="mvx-waves" preserveAspectRatio="none" viewBox="0 0 100 100" aria-hidden="true">
+        <path id="mvxWaveL" fill="url(#mvxWL)"></path><path id="mvxWaveR" fill="url(#mvxWR)"></path>
+      </svg>
+      <div class="mvx-centerCard" id="mvxCenterCard" style="background-image:url(img/funnel.jpg)"><i>Le Funnel</i></div>
+    </div>
+  </section>
+
+  <section class="mvx-scene" id="mvx-cascade" data-name="Cascade" style="height:260vh">
+    <div class="mvx-stage">
+      <div class="mvx-tag">Section<b>CASCADE</b></div><div class="mvx-idx">LES ACTIVITÉS EN DIAGONALE</div>
+    </div>
+  </section>
+</div>
+<!-- ===== /VERTEX MOTION PACK ===== -->
 <section class="finale"><img class="bg2" src="img/sunset.jpg" alt="Mnar Park au couchant, photo réelle"><div class="in2"><h2>Venez le vivre <span class="y">pour de vrai.</span></h2><p>Les photos donnent envie. Les descentes, elles, ne se racontent pas — elles se vivent, face à la baie de Tanger.</p><a class="btn" href="#billets">Réserver votre journée</a></div></section>
 
 <footer>
@@ -419,6 +539,125 @@ document.querySelectorAll('.ctr button').forEach(b=>b.addEventListener('click',(
 const dn=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'],dc=document.getElementById('dates'),now=new Date();
 for(let i=0;i<7;i++){const d=new Date(now);d.setDate(now.getDate()+i);const bt=document.createElement('button');bt.innerHTML=(i===0?'Auj.':dn[d.getDay()])+'<small>'+d.getDate()+'</small>';if(i===0)bt.className='sel';bt.onclick=()=>{dc.querySelectorAll('button').forEach(x=>x.className='');bt.className='sel'};dc.appendChild(bt)}
 tot();
+</script>
+<script id="mvx-js">
+/* VERTEX Motion Pack × Mnar Park — moteur autonome (aucune dépendance) */
+(function(){
+"use strict";
+var root=document.getElementById("mouvement"); if(!root) return;
+var clamp=function(v,a,b){return Math.max(a,Math.min(b,v));};
+var vh=function(){return window.innerHeight;};
+function tile(parent,img,label){
+  var d=document.createElement("div"); d.className="mvx-tile";
+  d.style.backgroundImage="url("+img+")";
+  d.innerHTML="<i>"+label+"</i>"; parent.appendChild(d); return d;
+}
+/* TUNNEL */
+var tStage=document.querySelector("#mvx-tunnel .mvx-stage"), tunnel=[];
+[["img/funnel.jpg","Le Funnel"],["img/kamikaze.jpg","Kamikaze"],["img/spiral.jpg","Spirale"],["img/racer.jpg","Racer"],["img/pool.jpg","Piscines"],["img/aerial.jpg","Vue aérienne"]]
+ .forEach(function(x,i){ tunnel.push({el:tile(tStage,x[0],x[1]),side:-1,i:i}); });
+[["img/hero.jpg","Le parc"],["img/sunset.jpg","Sunset"],["img/karting.jpg","Karting"],["img/buggy.jpg","Buggy"],["img/cheval.jpg","Équitation"],["img/paintball.jpg","Paintball"]]
+ .forEach(function(x,i){ tunnel.push({el:tile(tStage,x[0],x[1]),side:1,i:i}); });
+/* ORBIT */
+var oStage=document.querySelector("#mvx-orbit .mvx-stage"), orbit=[];
+[["img/funnel.jpg","Funnel"],["img/kamikaze.jpg","Kamikaze"],["img/spiral.jpg","AquaLoop"],["img/racer.jpg","Racer"],["img/racer2.jpg","Windigo"],["img/pool.jpg","Piscines"],["img/karting.jpg","Karting"],["img/cheval.jpg","Équitation"],["img/buggy.jpg","Buggy"],["img/paintball.jpg","Paintball"],["img/resto.jpg","Restaurant"],["img/sunset.jpg","Sunset"]]
+ .forEach(function(x){ orbit.push(tile(oStage,x[0],x[1])); });
+/* FLUX */
+var track=document.getElementById("mvxFluxTrack"), panels=[];
+[["img/aerial.jpg","Vue aérienne"],["img/hero.jpg","Le parc"],["img/sunset.jpg","Coucher de soleil"],["img/racer.jpg","Racer"],["img/pool.jpg","Piscines"],["img/funnel.jpg","Le Funnel"],["img/kamikaze.jpg","Kamikaze"]]
+ .forEach(function(x){
+   var d=document.createElement("div"); d.className="mvx-panel";
+   d.style.backgroundImage="url("+x[0]+")"; d.innerHTML="<i>"+x[1]+"</i>";
+   track.appendChild(d); panels.push(d);
+ });
+var lens=document.querySelector("#mvx-fisheye .mvx-lens");
+/* CASCADE */
+var cStage=document.querySelector("#mvx-cascade .mvx-stage"), cards=[];
+[["img/funnel.jpg","01 · Le Funnel"],["img/spiral.jpg","02 · AquaLoop"],["img/racer2.jpg","03 · Windigo"],["img/kamikaze.jpg","04 · Kamikaze"],["img/racer.jpg","05 · Racer"],["img/karting.jpg","06 · Karting"],["img/cheval.jpg","07 · Équitation"],["img/paintball.jpg","08 · Paintball"]]
+ .forEach(function(x,i){
+   var d=document.createElement("div"); d.className="mvx-card";
+   d.style.backgroundImage="url("+x[0]+")";
+   d.style.left=(5+i*11.5)+"%"; d.style.top=(7+i*10.5)+"%"; d.style.zIndex=10+i;
+   d.innerHTML="<i>"+x[1]+"</i>"; cStage.appendChild(d); cards.push(d);
+ });
+/* SCATTER (blocs statiques) */
+var blks=Array.prototype.map.call(root.querySelectorAll("#mvx-scatter .mvx-blk"),function(el){
+  return {el:el, sp:parseFloat(el.dataset.sp||"1"), r:parseFloat(el.dataset.r||"0")};
+});
+var waveL=document.getElementById("mvxWaveL"), waveR=document.getElementById("mvxWaveR"),
+    centerCard=document.getElementById("mvxCenterCard");
+function wavePath(left,phase){
+  var pts=[],N=24,i,y,w,x;
+  for(i=0;i<=N;i++){ y=i*(100/N);
+    w=Math.sin(y*0.11+phase)*3.4+Math.sin(y*0.045-phase*0.7)*2.2;
+    x=left?27+w:73-w; pts.push("L"+x.toFixed(2)+","+y.toFixed(1)); }
+  return left? "M0,0 "+pts.join(" ")+" L0,100 Z" : "M100,0 "+pts.join(" ")+" L100,100 Z";
+}
+var RENDER={
+ "mvx-tunnel":function(p){
+   tunnel.forEach(function(t){
+     var z=-t.i*430-(t.side>0?215:0)+p*2650;
+     var op=Math.min(clamp((z+1850)/500,0,1), clamp((300-z)/240,0,1));
+     t.el.style.opacity=op.toFixed(3);
+     t.el.style.transform="translate(-50%,-50%) translate3d("+(t.side*45)+"vmin,0,"+z+"px) rotateY("+(t.side*-62)+"deg)";
+   });},
+ "mvx-orbit":function(p,t){
+   var N=orbit.length, rot=p*2.6+t*0.03;
+   orbit.forEach(function(el,i){
+     var a=(i/N)*Math.PI*2+rot, x=Math.cos(a)*37, y=Math.sin(a)*28, d=(Math.sin(a)+1)/2, s=.42+d*.8;
+     el.style.zIndex=String(Math.round(d*30));
+     el.style.opacity=(0.3+d*0.7).toFixed(3);
+     el.style.transform="translate(-50%,-50%) translate("+x+"vmin,"+y+"vmin) scale("+s.toFixed(3)+") rotate("+(Math.cos(a)*5)+"deg)";
+   });},
+ "mvx-scatter":function(p){
+   blks.forEach(function(b){
+     var dy=(0.5-p)*b.sp*190;
+     b.el.style.transform="translate3d(0,"+dy.toFixed(1)+"px,0) rotate("+b.r+"deg)";
+   });},
+ "mvx-fisheye":function(p){
+   var maxShift=Math.max(0, track.scrollWidth-lens.clientWidth);
+   track.style.transform="translate3d("+(-p*maxShift).toFixed(1)+"px,0,0)";
+   var lr=lens.getBoundingClientRect(), cx=lr.left+lr.width/2;
+   panels.forEach(function(pn){
+     var r=pn.getBoundingClientRect(), c=r.left+r.width/2;
+     var d=clamp(1-Math.abs(c-cx)/(lr.width*0.62),0,1);
+     pn.style.transform="scale("+(1+d*0.06).toFixed(3)+")";
+   });},
+ "mvx-wavy":function(p,t){
+   var phase=p*5.5+t*0.9;
+   waveL.setAttribute("d", wavePath(true,phase));
+   waveR.setAttribute("d", wavePath(false,phase+1.7));
+   centerCard.style.transform="translateY("+(Math.sin(t*1.3)*5)+"px) rotate("+(Math.sin(t*0.7)*1.2)+"deg)";
+ },
+ "mvx-cascade":function(p){
+   var gx=-p*36, gy=-p*27;
+   cards.forEach(function(el,i){
+     var extra=(1-p)*i*4.5;
+     el.style.transform="translate("+(gx-extra)+"vmin,"+(gy-extra*0.75)+"vmin) rotate("+(-7+p*5+i*0.5)+"deg)";
+   });}
+};
+var scenes=Array.prototype.map.call(root.querySelectorAll(".mvx-scene"),function(el){
+  return {el:el, cur:0};
+});
+function prog(el){
+  var r=el.getBoundingClientRect(), total=el.offsetHeight-vh();
+  if(total<=0) return clamp((vh()-r.top)/(vh()+r.height),0,1);
+  return clamp(-r.top/total,0,1);
+}
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches, t0=performance.now();
+function frame(now){
+  var t=(now-t0)/1000;
+  scenes.forEach(function(s){
+    var r=s.el.getBoundingClientRect();
+    if(r.bottom<-vh()*0.4 || r.top>vh()*1.4) return; /* hors champ : on saute */
+    var target=prog(s.el);
+    s.cur+=(target-s.cur)*(reduce?1:0.085);
+    var fn=RENDER[s.el.id]; if(fn) fn(s.cur,t);
+  });
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+})();
 </script>
 </body>
 </html>
