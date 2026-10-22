@@ -259,7 +259,7 @@ document.getElementById('mqtrack').innerHTML=half+half;
 const NFRAMES=110,frames=[];let loaded=0;
 const cv=document.getElementById('filmcanvas'),cx=cv.getContext('2d');
 function sizeCanvas(){const r=cv.parentElement.getBoundingClientRect();cv.width=r.width;cv.height=r.height;draw(cur)}
-function draw(i){const im=frames[i];if(!im)return;const s=Math.max(cv.width/im.width,cv.height/im.height);const w=im.width*s,h=im.height*s;cx.drawImage(im,(cv.width-w)/2,(cv.height-h)/2,w,h)}
+function draw(i){const im=frames[i];if(!im||!im.naturalWidth)return;const s=Math.max(cv.width/im.width,cv.height/im.height);const w=im.width*s,h=im.height*s;cx.drawImage(im,(cv.width-w)/2,(cv.height-h)/2,w,h)}
 let cur=0,shown=-1;
 for(let i=0;i<NFRAMES;i++){const im=new Image();im.src=`film/frames/f${String(i).padStart(3,'0')}.webp`;im.onload=()=>{loaded++;if(loaded===1){sizeCanvas()}};frames.push(im)}
 const caps=[
