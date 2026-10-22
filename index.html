@@ -64,7 +64,7 @@ nav .links a{opacity:.92}nav .links a:hover{opacity:1;color:var(--yellow)}
 .film-pin canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .film-cap{position:absolute;left:22px;bottom:34px;z-index:3;max-width:min(88vw,480px)}
 .film-cap .num{color:var(--yellow);font-weight:900;letter-spacing:.3em;font-size:13px}
-.film-cap h2{font-size:clamp(34px,6vw,58px);text-transform:uppercase;line-height:.98;margin:6px 0 8px;text-shadow:0 4px 22px #000c}
+.film-cap h2 em{font-style:normal;color:var(--yellow)}.film-cap h2{font-size:clamp(34px,6vw,58px);text-transform:uppercase;line-height:.98;margin:6px 0 8px;text-shadow:0 4px 22px #000c}
 .film-cap p{color:#d9efff;font-size:15px;text-shadow:0 2px 10px #000c}
 .film-prog{position:absolute;right:22px;bottom:34px;z-index:3;text-align:right}
 .film-prog .pct{font-size:30px;font-weight:900;color:var(--yellow)}
@@ -129,6 +129,39 @@ footer .logo{color:#fff;font-size:26px}
 footer p{font-size:13px;line-height:1.7;max-width:640px;margin:12px auto 0}
 footer .demo{display:inline-block;border:1px solid #ffc61a66;color:var(--yellow);border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;margin-top:16px}
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:120;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:27px;box-shadow:0 12px 28px #02183a4d}
+
+/* --- v2 fidelity (full reel report) --- */
+.pillbar{position:fixed;bottom:14px;z-index:110}
+.wa-float{bottom:104px}
+footer{padding-bottom:120px}
+.tickets{background:var(--yellow);color:var(--ink)}
+.tickets .kick{color:var(--red)}
+.tickets h2.big{color:var(--blue)} .tickets h2.big .y{color:var(--red)}
+.tickets .tsub{color:#5a4a12}
+.tcard{background:#fff;border:none;color:var(--ink);box-shadow:0 16px 36px #7a5b0066}
+.tcard p{color:#5a6b7d}.tcard .price small{color:var(--red)}
+.tcard .btn{background:var(--blue);box-shadow:0 8px 20px #0756c955}
+.tickets .note{color:#7a6414}
+.book{background:var(--blue);border-radius:24px;padding:26px 24px;margin-top:26px;color:#fff;box-shadow:0 22px 48px #7a5b0055}
+.book h3{font-size:26px;text-transform:uppercase;letter-spacing:.04em}
+.dates{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.dates button{background:#ffffff1f;border:1px solid #ffffff38;color:#fff;border-radius:12px;padding:9px 6px;min-width:52px;font-weight:700;font-size:12px;cursor:pointer}
+.dates button small{display:block;font-size:16px}
+.dates button.sel{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.rows{display:grid;gap:10px}
+.row{display:flex;align-items:center;justify-content:space-between;background:#ffffff14;border-radius:14px;padding:12px 14px}
+.row .lab b{display:block;font-size:15px}.row .lab span{font-size:12px;color:#bcd8f5}
+.ctr{display:flex;align-items:center;gap:12px}
+.ctr button{width:34px;height:34px;border-radius:50%;border:none;background:#fff;color:var(--blue);font-size:19px;font-weight:900;cursor:pointer}
+.ctr b{font-size:17px;min-width:18px;text-align:center}
+.book .foot{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:18px;flex-wrap:wrap}
+.book .total{font-size:15px}.book .total b{font-size:30px;color:var(--yellow)}
+.finale{position:relative;padding:120px 22px 130px;text-align:center;color:#fff;overflow:hidden;background:#02183a}
+.finale img.bg2{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.finale .in2{position:relative;z-index:2}
+.finale h2{font-size:clamp(40px,8vw,84px);text-transform:uppercase;line-height:.95}
+.finale h2 .y{color:var(--yellow)}
+.finale p{color:#d9efff;margin:14px auto 22px;max-width:520px}
 </style>
 </head>
 <body>
@@ -203,14 +236,24 @@ footer .demo{display:inline-block;border:1px solid #ffc61a66;color:var(--yellow)
 
 <section class="tickets" id="billets"><div style="max-width:1180px;margin:0 auto;padding:84px 22px">
   <div class="kick">Billetterie</div>
-  <h2 class="big">Prêt pour <span class="y">le ride ?</span></h2>
-  <p style="color:#bcd8f5;max-width:600px;line-height:1.55">Une journée complète : toboggans, piscines et espace enfants. Les billets se prennent à l'accueil du parc, à Cap Malabata.</p>
+  <h2 class="big">Réservez, <span class="y">économisez la file</span></h2>
+  <p class="tsub" style="max-width:600px;line-height:1.55">Choisissez votre jour, composez votre groupe, et confirmez à l'accueil du parc. Une journée complète : toboggans, piscines et espace enfants.</p>
   <div class="tgrid">
-    <div class="tcard tilt"><h3>Adulte</h3><div class="price">220 <small>DH</small></div><p>Plus de 120 cm — accès journée complète aux toboggans et piscines.</p><a class="btn" href="tel:+212539343831">Appeler le parc</a></div>
-    <div class="tcard hot tilt"><h3>Enfant</h3><div class="price">120 <small>DH</small></div><p>Moins de 120 cm — espace enfants, pataugeoires et mini-toboggans adaptés.</p><a class="btn" href="tel:+212539343831">Appeler le parc</a></div>
-    <div class="tcard tilt"><h3>Transat</h3><div class="price">40 <small>DH</small></div><p>Le transat pour la journée, entre deux descentes — face aux piscines ou sous les palmiers.</p><a class="btn" href="tel:+212539343831">Appeler le parc</a></div>
+    <div class="tcard tilt"><h3>Adulte</h3><div class="price">220 <small>DH</small></div><p>Plus de 120 cm — accès journée complète aux toboggans et piscines.</p><a class="btn" href="#book">Choisir</a></div>
+    <div class="tcard tilt"><h3>Enfant</h3><div class="price">120 <small>DH</small></div><p>Moins de 120 cm — espace enfants, pataugeoires et mini-toboggans adaptés.</p><a class="btn" href="#book">Choisir</a></div>
+    <div class="tcard tilt"><h3>Transat</h3><div class="price">40 <small>DH</small></div><p>Le transat pour la journée, entre deux descentes — face aux piscines ou sous les palmiers.</p><a class="btn" href="#book">Ajouter</a></div>
   </div>
-  <p class="note">Tarifs constatés sur place et dans les avis visiteurs récents (été 2026) — à confirmer à l'accueil du parc le jour de la visite.</p>
+  <div class="book" id="book">
+    <h3>Vos billets</h3>
+    <div class="dates" id="dates"></div>
+    <div class="rows">
+      <div class="row"><div class="lab"><b>Adultes</b><span>220 DH · +120 cm</span></div><div class="ctr"><button data-k="ad" data-d="-1">−</button><b id="n-ad">2</b><button data-k="ad" data-d="1">+</button></div></div>
+      <div class="row"><div class="lab"><b>Enfants</b><span>120 DH · −120 cm</span></div><div class="ctr"><button data-k="en" data-d="-1">−</button><b id="n-en">1</b><button data-k="en" data-d="1">+</button></div></div>
+      <div class="row"><div class="lab"><b>Transats</b><span>40 DH · la journée</span></div><div class="ctr"><button data-k="tr" data-d="-1">−</button><b id="n-tr">0</b><button data-k="tr" data-d="1">+</button></div></div>
+    </div>
+    <div class="foot"><div class="total">Total estimé<br><b id="total">560 DH</b></div><a class="btn" href="tel:+212539343831">Confirmer à l'accueil — 0539 343 831</a></div>
+  </div>
+  <p class="note">Tarifs constatés sur place et dans les avis visiteurs récents (été 2026) — à confirmer à l'accueil du parc le jour de la visite. Panneau de démonstration : aucun paiement en ligne réel.</p>
 </div></section>
 
 <section class="blk" id="plus">
@@ -235,6 +278,8 @@ footer .demo{display:inline-block;border:1px solid #ffc61a66;color:var(--yellow)
     <div class="info"><h3>🕖 Horaires &amp; séjour</h3><p>Parc ouvert tous les jours, 07:00 – 23:00.<br>Check-in appartements : 15:00 · Check-out : 12:00.<br>Parking gratuit sur place, Wi-Fi dans les espaces publics.</p></div>
   </div>
 </section>
+
+<section class="finale"><img class="bg2" src="img/sunset.jpg" alt="Mnar Park au couchant, photo réelle"><div class="in2"><h2>Venez le vivre <span class="y">pour de vrai.</span></h2><p>Les photos donnent envie. Les descentes, elles, ne se racontent pas — elles se vivent, face à la baie de Tanger.</p><a class="btn" href="#billets">Réserver votre journée</a></div></section>
 
 <footer>
   <div class="logo">MNAR <span style="color:var(--yellow)">PARK</span></div>
@@ -263,14 +308,14 @@ function draw(i){const im=frames[i];if(!im||!im.naturalWidth)return;const s=Math
 let cur=0,shown=-1;
 for(let i=0;i<NFRAMES;i++){const im=new Image();im.src=`film/frames/f${String(i).padStart(3,'0')}.webp`;im.onload=()=>{loaded++;if(loaded===1){sizeCanvas()}};frames.push(im)}
 const caps=[
- {n:'01 / 05 — SURVOL',t:'La baie de Tanger',p:"On décolle au-dessus du parc, face à la mer."},
- {n:'02 / 05 — LE FUNNEL',t:"L'entonnoir géant",p:'Le grand tourbillon bleu et jaune, emblème de Mnar Park.'},
- {n:'03 / 05 — WINDIGO',t:'La course arc-en-ciel',p:'Huit pistes, la tête la première, droit dans le bassin.'},
- {n:'04 / 05 — KAMIKAZE',t:'La chute libre',p:'Orange, verticale, inoubliable.'},
- {n:'05 / 05 — LE COUCHANT',t:'Le parc sallume',p:'Dernière descente, le soleil tombe sur le détroit.'}];
-caps[4].t='Le parc s\u2019illumine';
+ {n:'01 / 05 — SURVOL',t:'ON <em>DÉCOLLE.</em>',p:"Au-dessus du parc, la baie de Tanger droit devant."},
+ {n:'02 / 05 — LE FUNNEL',t:'DANS LE <em>FUNNEL.</em>',p:"Le grand tourbillon bleu et jaune, emblème de Mnar Park."},
+ {n:'03 / 05 — WINDIGO',t:'TÊTE LA <em>PREMIÈRE.</em>',p:"Huit pistes arc-en-ciel, droit dans le bassin."},
+ {n:'04 / 05 — KAMIKAZE',t:'CHUTE <em>LIBRE.</em>',p:"Orange, verticale, inoubliable."},
+ {n:'05 / 05 — LE COUCHANT',t:'LE PARC <em>S\u2019ILLUMINE.</em>',p:"Dernière descente, le soleil tombe sur le détroit."}];
+
 let capIdx=-1;
-function setCap(p){const i=Math.min(4,Math.floor(p*5));if(i===capIdx)return;capIdx=i;const c=caps[i];const el=document.querySelector('.film-cap');gsap.fromTo(el,{opacity:0,y:16},{opacity:1,y:0,duration:.45});document.getElementById('capnum').textContent=c.n;document.getElementById('captitle').textContent=c.t;document.getElementById('capp').textContent=c.p}
+function setCap(p){const i=Math.min(4,Math.floor(p*5));if(i===capIdx)return;capIdx=i;const c=caps[i];const el=document.querySelector('.film-cap');gsap.fromTo(el,{opacity:0,y:16},{opacity:1,y:0,duration:.45});document.getElementById('capnum').textContent=c.n;document.getElementById('captitle').innerHTML=c.t;document.getElementById('capp').textContent=c.p}
 if(window.gsap&&window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);
  ScrollTrigger.create({trigger:'#filmpin',start:'top top',end:'+=2600',pin:true,scrub:false,onUpdate:self=>{const p=self.progress;document.getElementById('filmpct').textContent=Math.round(p*100)+'%';document.getElementById('filmbar').style.width=(p*100)+'%';setCap(p);const target=Math.min(NFRAMES-1,Math.floor(p*NFRAMES));gsap.to({v:cur},{v:target,duration:.35,ease:'power2.out',overwrite:true,onUpdate:function(){cur=this.targets()[0].v;const i=Math.round(cur);if(i!==shown){shown=i;draw(i)}}})}});
 }else{draw(0)}
@@ -287,5 +332,26 @@ st.addEventListener('pointermove',e=>{if(!drag)return;ang=sa+(e.clientX-sx)*.005
 st.addEventListener('pointerup',()=>drag=false);st.addEventListener('pointercancel',()=>drag=false);
 (function spin(){if(!drag){ang+=.0016;layout()}requestAnimationFrame(spin)})();
 </script>
+<script>
+const PR={ad:220,en:120,tr:40},Q={ad:2,en:1,tr:0};
+function tot(){document.getElementById('total').textContent=(Q.ad*PR.ad+Q.en*PR.en+Q.tr*PR.tr)+' DH'}
+document.querySelectorAll('.ctr button').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.k;Q[k]=Math.max(0,Math.min(12,Q[k]+ +b.dataset.d));document.getElementById('n-'+k).textContent=Q[k];tot()}));
+const dn=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'],dc=document.getElementById('dates'),now=new Date();
+for(let i=0;i<7;i++){const d=new Date(now);d.setDate(now.getDate()+i);const bt=document.createElement('button');bt.innerHTML=(i===0?'Auj.':dn[d.getDay()])+'<small>'+d.getDate()+'</small>';if(i===0)bt.className='sel';bt.onclick=()=>{dc.querySelectorAll('button').forEach(x=>x.className='');bt.className='sel'};dc.appendChild(bt)}
+tot();
+</script>
 </body>
 </html>
+<style>
+@media(max-width:640px){
+.pillbar{flex-wrap:wrap;gap:7px 12px;padding:10px 12px;border-radius:24px;bottom:10px;left:6px;right:6px;transform:none;width:auto;max-width:none;justify-content:center}
+.pillbar .btn{padding:9px 16px;font-size:12.5px}
+.wa-float{bottom:118px}
+.pillbar .cell:first-child{display:none}
+.pillbar .cell{font-size:11px;line-height:1.25}
+.pillbar .cell b{display:inline;font-size:10px;margin-right:4px}
+.pillbar .btn{padding:9px 13px;font-size:12px;white-space:nowrap}
+.wa-float{bottom:78px}
+.hero .inner{padding-bottom:150px}
+}
+</style>
