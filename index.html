@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
 <title>MNAR PARK — Tanger | Le parc aquatique face à la baie</title>
 <meta name="description" content="Mnar Park Tanger — toboggans géants, piscines, karting et séjour face à la baie de Tanger, Cap Malabata. Concept de démonstration VERTEX WEB.">
 <style>
@@ -162,19 +163,51 @@ footer{padding-bottom:120px}
 .finale h2{font-size:clamp(40px,8vw,84px);text-transform:uppercase;line-height:.95}
 .finale h2 .y{color:var(--yellow)}
 .finale p{color:#d9efff;margin:14px auto 22px;max-width:520px}
+
+/* --- v3: hero video + activités en détail --- */
+.hero .bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.chaps{max-width:1180px;margin:0 auto;padding:20px 22px 84px}
+.chap{display:grid;grid-template-columns:1.05fr 1fr;border-radius:24px;overflow:hidden;margin-top:26px;background:#fff;box-shadow:0 16px 38px #06203f16}
+.chap .ph{min-height:280px;overflow:hidden}
+.chap .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.chap:hover .ph img{transform:scale(1.06)}
+.chap .tx{padding:30px 30px 26px;position:relative}
+.chap .no{position:absolute;top:8px;right:18px;font-size:74px;font-weight:900;color:transparent;-webkit-text-stroke:2px #0756c922;line-height:1}
+.chap h3{font-size:clamp(26px,3.4vw,36px);text-transform:uppercase;line-height:1}
+.chap .tx p{color:#3c5a78;line-height:1.6;margin-top:10px;font-size:15px}
+.chap.flip .ph{order:2}
+.chap.dark{background:var(--deep);color:#fff}.chap.dark .tx p{color:#bcd8f5}.chap.dark .no{-webkit-text-stroke-color:#ffffff2b}
+.chap.wide{grid-template-columns:1fr}.chap.wide .ph{min-height:320px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.chips span{background:#e7f4ff;color:var(--blue);font-size:11.5px;font-weight:800;letter-spacing:.06em;padding:6px 11px;border-radius:999px}
+.chap.dark .chips span{background:#ffffff1d;color:#fff}
+.design{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:34px;min-height:280px;color:#fff;position:relative;overflow:hidden}
+.design .big-ic{font-size:74px;line-height:1;filter:drop-shadow(0 10px 22px #0006)}
+.design h3{color:#fff}
+.design p{color:#ffffffd9!important}
+.d-kart{background:linear-gradient(140deg,#101828,#f43f2f)}
+.d-cheval{background:linear-gradient(140deg,#0d3b2e,#2f9e44)}
+.d-quad{background:linear-gradient(140deg,#3a2503,#e8890c)}
+.d-paint{background:linear-gradient(140deg,#1d1038,#7b2ff7)}
+.d-resto{background:linear-gradient(140deg,#431407,#c2410c)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:16px}
+.facts div{background:#e7f4ff;border-radius:12px;padding:12px}
+.facts b{display:block;font-size:17px;color:var(--blue)}
+.facts span{font-size:11.5px;color:#5a7b9c;font-weight:700;letter-spacing:.04em}
+@media(max-width:760px){.chap{grid-template-columns:1fr}.chap.flip .ph{order:0}.chap .ph{min-height:210px}}
 </style>
 </head>
-<body>
+<body class="notranslate">
 <div id="loader"><div class="lg">MNAR <span>PARK</span></div><div class="bar"><i id="loadbar"></i></div><div style="color:#8fb3da;font-size:12px;letter-spacing:.26em">TANGER · CAP MALABATA</div></div>
 
 <nav>
   <div class="logo">MNAR <span>PARK</span><small>TANGER — AQUA PARK</small></div>
-  <div class="links"><a href="#attractions">Attractions</a><a href="#film">Le ride</a><a href="#billets">Billetterie</a><a href="#plus">Séjour &amp; food</a><a href="#infos">Infos</a></div>
+  <div class="links"><a href="#attractions">Attractions</a><a href="#activites">Activités</a><a href="#film">Le ride</a><a href="#billets">Billetterie</a><a href="#plus">Séjour &amp; food</a><a href="#infos">Infos</a></div>
   <a class="btn" href="#billets">Billets</a>
 </nav>
 
 <header class="hero">
-  <div class="bg"><img src="img/hero.jpg" alt="Mnar Park Tanger — le grand entonnoir et les piscines, photo réelle du parc"></div>
+  <div class="bg"><img src="img/hero.jpg" alt="Mnar Park Tanger — le grand entonnoir et les piscines, photo réelle du parc"><video autoplay muted loop playsinline poster="img/hero.jpg" src="hero-film.mp4" aria-label="Survol FPV de Mnar Park, images réelles du parc"></video></div>
   <div class="shade"></div>
   <div class="coords"><b>35.808° N — 5.749° W</b>CAP MALABATA · BAIE DE TANGER</div>
   <div class="inner">
@@ -233,6 +266,37 @@ footer{padding-bottom:120px}
   </div>
   <div class="flowhint">← GLISSER POUR TOURNER →</div>
 </div>
+
+
+<section class="chaps" id="activites">
+  <div class="kick">Toutes les activités — en détail</div>
+  <h2 class="big">Chaque activité, <span class="y">une à une</span></h2>
+  <p class="sub">Tout ce qu'on peut faire à Mnar Park, de la première descente au coucher du soleil — l'aquatique d'abord, puis la terre ferme, la table et le séjour. Chaque activité a droit à sa propre scène.</p>
+
+  <article class="chap"><div class="ph"><img src="img/funnel.jpg" alt="Le Funnel géant de Mnar Park, photo réelle"></div><div class="tx"><div class="no">01</div><h3>Le Funnel géant</h3><p>L'emblème de Mnar Park, visible depuis la route de Ksar Sghir : un entonnoir bleu et jaune grand comme une maison. On s'élance dans le tube, on tourbillonne dans la cuvette en prenant de la vitesse à chaque tour, puis on bascule dans le bassin d'arrivée. C'est LA descente que tout le monde photographie — et celle qu'on refait trois fois.</p><div class="meter">INTENSITÉ <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="chips"><span>L'ICÔNE DU PARC</span><span>TOURBILLON 360°</span><span>PHOTO SPOT</span></div></div></article>
+
+  <article class="chap flip dark"><div class="ph"><img src="img/pool.jpg" alt="La tour des toboggans et le grand bassin de Mnar Park, photo réelle"></div><div class="tx"><div class="no">02</div><h3>AquaLoop &amp; la tour</h3><p>Depuis la grande tour qui domine le parc partent les descentes les plus raides, dont la fameuse boucle AquaLoop. On monte les marches avec vue sur toute la baie, le cœur qui monte avant même la descente — puis quelques secondes de chute et de boucle, et on ressort du bassin avec une seule envie : remonter.</p><div class="meter">INTENSITÉ <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="chips"><span>BOUCLE VERTICALE</span><span>VUE PANORAMIQUE</span><span>SENSATIONS FORTES</span></div></div></article>
+
+  <article class="chap"><div class="ph"><img src="img/racer.jpg" alt="Windigo, la course arc-en-ciel de Mnar Park, photo réelle"></div><div class="tx"><div class="no">03</div><h3>Windigo — la course</h3><p>Huit pistes arc-en-ciel côte à côte, un tapis sous le ventre, et le départ donné en même temps pour tout le monde. Le Windigo, c'est la course officielle des groupes : on choisit sa couleur, on plonge tête la première, et le dernier arrivé offre les jus. Les revanches s'enchaînent jusqu'à la fermeture.</p><div class="meter">INTENSITÉ <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div><div class="chips"><span>8 PISTES</span><span>TÊTE LA PREMIÈRE</span><span>ENTRE AMIS</span></div></div></article>
+
+  <article class="chap wide"><div class="ph"><img src="img/kamikaze.jpg" alt="Kamikaze et spirale de Mnar Park, photo réelle"></div><div class="tx"><div class="no">04</div><h3>Kamikaze &amp; Spirale</h3><p>Deux caractères, une même tour. Le Kamikaze : une chute orange presque verticale, quelques secondes les bras croisés et le souffle coupé. La Spirale rouge et blanche : plus douce en apparence, elle vous fait tourner encore et encore avant le plongeon final. Les courageux font les deux, dans la foulée.</p><div class="meter">INTENSITÉ <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="chips"><span>CHUTE QUASI VERTICALE</span><span>SPIRALE ROUGE &amp; BLANCHE</span><span>LE DUO DE LA TOUR</span></div></div></article>
+
+  <article class="chap flip"><div class="ph"><img src="img/aerial.jpg" alt="Vue aérienne des piscines de Mnar Park, photo réelle"></div><div class="tx"><div class="no">05</div><h3>Espace enfants</h3><p>Un vrai terrain de jeu aquatique pour les plus petits : piscine enfants peu profonde, mini-toboggans à leur taille et jeux d'eau, juste à côté des grands bassins pour que toute la famille reste ensemble. Les parents gardent un œil depuis les transats, les enfants ne voudront plus sortir de l'eau.</p><div class="chips"><span>PISCINE ENFANTS</span><span>MINI-TOBOGGANS</span><span>EAU PEU PROFONDE</span><span>TARIF −120 CM : 120 DH</span></div></div></article>
+
+  <article class="chap dark"><div class="ph"><img src="img/sunset.jpg" alt="Les piscines de Mnar Park au couchant, photo réelle"></div><div class="tx"><div class="no">06</div><h3>Rivière &amp; détente</h3><p>Le parc sait aussi ralentir : la rivière paresseuse pour se laisser porter, les grands bassins pour nager face à la mer, les parasols gratuits et les transats à 40 DH pour la sieste entre deux descentes. En fin de journée, quand la lumière tombe sur le détroit, c'est le plus beau moment du parc.</p><div class="chips"><span>RIVIÈRE PARESSEUSE</span><span>TRANSAT 40 DH</span><span>VUE SUR LE DÉTROIT</span></div></div></article>
+
+  <article class="chap"><div class="design d-kart"><div class="big-ic">🏎️</div></div><div class="tx"><div class="no">07</div><h3>Karting</h3><p>La course continue hors de l'eau : le complexe abrite un circuit de karting où les mêmes groupes qui se défiaient sur le Windigo règlent leurs comptes au volant. Casque, briefing, et que le meilleur gagne — l'activité parfaite quand on a séché du dernier plongeon.</p><div class="chips"><span>CIRCUIT SUR PLACE</span><span>ENTRE AMIS</span><span>À L'ACCUEIL</span></div></div></article>
+
+  <article class="chap flip"><div class="design d-cheval"><div class="big-ic">🐎</div></div><div class="tx"><div class="no">08</div><h3>Équitation</h3><p>Changement de rythme : des balades à cheval peuvent s'organiser depuis le parc, dans les paysages verts de Cap Malabata, entre pins et vue sur la mer. Une parenthèse calme, très demandée par les familles et les couples de passage à Tanger.</p><div class="chips"><span>BALADES</span><span>CAP MALABATA</span><span>SUR DEMANDE</span></div></div></article>
+
+  <article class="chap"><div class="design d-quad"><div class="big-ic">🛵</div></div><div class="tx"><div class="no">09</div><h3>Quad &amp; buggy</h3><p>Pour ceux qui veulent de la poussière après le chlore : sorties quad et tours en buggy autour du complexe, entre pistes et collines de Malabata. Sensations mécaniques, encadrement sur place, et retour au parc pour un dernier bain avant le coucher du soleil.</p><div class="chips"><span>SORTIES ENCADRÉES</span><span>PLEIN AIR</span><span>SUR DEMANDE</span></div></div></article>
+
+  <article class="chap flip"><div class="design d-paint"><div class="big-ic">🎯</div></div><div class="tx"><div class="no">10</div><h3>Paintball</h3><p>Deux équipes, des combinaisons, et des stratégies qui ne survivent jamais au premier échange : le paintball du complexe est le défouloir des groupes d'amis et des anniversaires. On ressort coloré, hilare, et prêt pour la piscine.</p><div class="chips"><span>EN ÉQUIPE</span><span>GROUPES &amp; ANNIVERSAIRES</span><span>À L'ACCUEIL</span></div></div></article>
+
+  <article class="chap"><div class="design d-resto"><div class="big-ic">🍽️</div></div><div class="tx"><div class="no">11</div><h3>Restaurant, café &amp; crêpes</h3><p>Une journée au parc, ça creuse : restaurant et buvette sur place servent une cuisine aux saveurs méditerranéennes, et les habitués le savent — les crêpes du café sont une institution. Terrasses ombragées, vue sur les bassins, et le goûter qui devient le rituel de fin de journée.</p><div class="chips"><span>RESTAURANT SUR PLACE</span><span>LES FAMEUSES CRÊPES</span><span>TERRASSES</span></div></div></article>
+
+  <article class="chap wide"><div class="ph"><img src="img/hero.jpg" alt="Mnar Park et ses appartements, photo réelle"></div><div class="tx"><div class="no">12</div><h3>Le séjour — 43 appartements</h3><p>Pourquoi repartir ? Le complexe propose 43 appartements avec patios, jardins et terrasses, pour se réveiller face à la mer et être les premiers sur les toboggans. Kitchenettes équipées, réception ouverte jour et nuit, parking gratuit : la formule des familles qui transforment une journée au parc en vrai week-end à Tanger.</p><div class="facts"><div><b>43</b><span>APPARTEMENTS</span></div><div><b>15:00</b><span>CHECK-IN</span></div><div><b>12:00</b><span>CHECK-OUT</span></div><div><b>24h/24</b><span>RÉCEPTION</span></div><div><b>Gratuit</b><span>PARKING &amp; WI-FI PUBLIC</span></div></div><div class="chips"><span>PATIOS &amp; TERRASSES</span><span>KITCHENETTES</span><span>FACE À LA MER</span></div></div></article>
+</section>
 
 <section class="tickets" id="billets"><div style="max-width:1180px;margin:0 auto;padding:84px 22px">
   <div class="kick">Billetterie</div>
