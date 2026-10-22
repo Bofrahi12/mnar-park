@@ -256,8 +256,8 @@ footer{padding-bottom:120px}
 #mouvement{background:#02183a}
 .mvx-bg{position:sticky;top:0;height:100vh;height:100svh;margin-bottom:-100vh;z-index:0;overflow:hidden}
 .mvx-bg video{width:100%;height:100%;object-fit:cover;animation:mvxkb 18s ease-in-out infinite alternate}
-.mvx-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,24,58,.58),rgba(2,24,58,.34) 45%,rgba(2,24,58,.62))}
-@keyframes mvxkb{from{transform:scale(1)}to{transform:scale(1.13)}}
+.mvx-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,24,58,.5),rgba(2,24,58,.22) 45%,rgba(2,24,58,.52))}
+@keyframes mvxkb{from{transform:scale(1)}to{transform:scale(1.05)}}
 .mvx-head,.mvx-scene{position:relative;z-index:1}
 .mvx-head .k{color:var(--sky)}
 .mvx-head h2{color:#fff;text-shadow:0 3px 22px rgba(0,0,0,.4)}
@@ -271,6 +271,34 @@ footer{padding-bottom:120px}
 #mvx-orbit .mvx-center .cb span{color:var(--yellow)}
 #mvx-orbit .mvx-center .cs{color:#fff;opacity:.85}
 #mvx-tunnel .mvx-cap{color:#fff}
+</style>
+<style id="mvx-css3">
+/* ===== Finition professionnelle : images plus grandes, étiquettes nettes ===== */
+.mvx-tile,.mvx-card,.mvx-panel,.mvx-blk,.mvx-centerCard{border:2px solid rgba(255,255,255,.92);border-radius:16px}
+.mvx-tile i,.mvx-card i,.mvx-panel i,.mvx-blk i{left:10px;right:auto;bottom:10px;width:auto;background:rgba(2,24,58,.78);backdrop-filter:blur(6px);padding:6px 11px;border-radius:999px;font-size:11px}
+.mvx-centerCard i{left:10px;right:auto;bottom:10px;width:auto;background:rgba(2,24,58,.78);backdrop-filter:blur(6px);padding:7px 13px;border-radius:999px}
+.mvx-tag{background:rgba(2,24,58,.5);backdrop-filter:blur(8px);padding:9px 13px;border-radius:13px;border:1px solid rgba(255,255,255,.22);left:14px}
+.mvx-idx{background:rgba(2,24,58,.38);backdrop-filter:blur(8px);padding:7px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.16);right:14px}
+.mvx-head .k{display:inline-block;background:rgba(255,198,26,.16);border:1px solid rgba(255,198,26,.55);color:var(--yellow);padding:6px 14px;border-radius:999px}
+/* bureau : un cran plus grand */
+#mvx-tunnel .mvx-tile{width:32vmin;height:44vmin}
+#mvx-orbit .mvx-tile{width:17vmin;height:21vmin}
+.mvx-card{width:26vmin;height:33vmin}
+.mvx-centerCard{width:30vmin;height:42vmin}
+/* mobile : les images deviennent les héroïnes de la scène */
+@media (max-width:640px){
+  #mvx-tunnel .mvx-tile{width:64vw;height:88vw}
+  #mvx-orbit .mvx-tile{width:30vw;height:38vw}
+  .mvx-card{width:56vw;height:70vw}
+  .mvx-panel{width:80vw}
+  .mvx-centerCard{width:58vw;height:80vw}
+  #mvx-scatter .mvx-blk{width:37vw !important;height:46vw !important}
+  #mvx-scatter .mvx-blk.card{width:31vw !important;height:31vw !important}
+  #mvx-scatter .mvx-blk.txt{width:58vw !important;height:22vw !important}
+  .mvx-head{padding:56px 16px 4px}
+  .mvx-head h2{font-size:34px}
+  #mvx-orbit .mvx-center .cb{font-size:40px}
+}
 </style>
 </head>
 <body class="notranslate">
@@ -628,10 +656,10 @@ var RENDER={
  "mvx-orbit":function(p,t){
    var N=orbit.length, rot=p*2.6+t*0.03;
    orbit.forEach(function(el,i){
-     var a=(i/N)*Math.PI*2+rot, x=Math.cos(a)*37, y=Math.sin(a)*28, d=(Math.sin(a)+1)/2, s=.42+d*.8;
+     var a=(i/N)*Math.PI*2+rot, x=Math.cos(a)*37, yv=Math.sin(a)*33, d=(Math.sin(a)+1)/2, s=.42+d*.8;
      el.style.zIndex=String(Math.round(d*30));
      el.style.opacity=(0.3+d*0.7).toFixed(3);
-     el.style.transform="translate(-50%,-50%) translate("+x+"vmin,"+y+"vmin) scale("+s.toFixed(3)+") rotate("+(Math.cos(a)*5)+"deg)";
+     el.style.transform="translate(-50%,-50%) translate("+x+"vmin,"+yv+"vh) scale("+s.toFixed(3)+") rotate("+(Math.cos(a)*5)+"deg)";
    });},
  "mvx-scatter":function(p){
    blks.forEach(function(b){
