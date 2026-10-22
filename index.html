@@ -50,7 +50,7 @@ nav .links a{opacity:.92}nav .links a:hover{opacity:1;color:var(--yellow)}
 .pillbar .cell{font-size:13px;line-height:1.35;white-space:nowrap}
 .pillbar .cell b{display:block;font-size:11px;letter-spacing:.14em;opacity:.75;font-weight:700}
 .pillbar .sep{width:1px;height:30px;background:#ffffff38}
-@media(max-width:640px){.pillbar{gap:10px;padding:10px 14px;border-radius:26px}.pillbar .sep{display:none}.hero .inner{padding-bottom:170px;text-align:left}.hero p{margin-left:0}}
+@media(max-width:640px){.pillbar{gap:8px 14px;padding:12px 14px;border-radius:26px;bottom:16px}.pillbar .sep{display:none}.pillbar .cell{font-size:12px}.hero .inner{padding-bottom:288px;text-align:left}.hero p{margin-left:0}.film-prog{bottom:96px}.film-cap{bottom:26px}}
 .scrollhint{position:absolute;bottom:30px;left:22px;color:#fff;font-size:11px;letter-spacing:.3em;z-index:5;writing-mode:vertical-rl;opacity:.85}
 @media(max-width:640px){.scrollhint{display:none}}
 /* marquee */
@@ -245,8 +245,9 @@ footer .demo{display:inline-block;border:1px solid #ffc61a66;color:var(--yellow)
 
 <a class="wa-float" href="https://wa.me/212693981822?text=Bonjour%20VERTEX%20WEB%2C%20je%20veux%20parler%20du%20concept%20Mnar%20Park" aria-label="WhatsApp VERTEX WEB">💬</a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link rel="icon" href="favicon.ico">
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
 <script>
 /* loader */
 let lp=0;const li=setInterval(()=>{lp=Math.min(100,lp+Math.random()*22);document.getElementById('loadbar').style.width=lp+'%';if(lp>=100){clearInterval(li);setTimeout(()=>document.getElementById('loader').classList.add('hide'),250)}},160);
