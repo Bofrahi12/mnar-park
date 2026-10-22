@@ -250,6 +250,28 @@ footer{padding-bottom:120px}
 .mvx-card i{font-style:normal;font-weight:800;color:#fff;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:16px 12px 9px;background:linear-gradient(transparent,rgba(2,20,50,.72));width:100%}
 @media (max-width:560px){ .mvx-tag{top:74px} .mvx-idx{top:74px} }
 </style>
+
+<style id="mvx-css2">
+/* Fond réel animé : le vrai film drone du parc derrière les 6 sections */
+#mouvement{background:#02183a}
+.mvx-bg{position:sticky;top:0;height:100vh;height:100svh;margin-bottom:-100vh;z-index:0;overflow:hidden}
+.mvx-bg video{width:100%;height:100%;object-fit:cover;animation:mvxkb 18s ease-in-out infinite alternate}
+.mvx-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,24,58,.58),rgba(2,24,58,.34) 45%,rgba(2,24,58,.62))}
+@keyframes mvxkb{from{transform:scale(1)}to{transform:scale(1.13)}}
+.mvx-head,.mvx-scene{position:relative;z-index:1}
+.mvx-head .k{color:var(--sky)}
+.mvx-head h2{color:#fff;text-shadow:0 3px 22px rgba(0,0,0,.4)}
+.mvx-head h2 span{color:var(--yellow)}
+.mvx-head p{color:#eaf6ff;opacity:.9}
+.mvx-tag{color:var(--sky)}
+.mvx-tag b{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.mvx-idx{color:#fff;opacity:.8}
+#mvx-tunnel .mvx-stage,#mvx-orbit .mvx-stage,#mvx-fisheye .mvx-stage,#mvx-wavy .mvx-stage,#mvx-cascade .mvx-stage{background:transparent}
+#mvx-orbit .mvx-center .cb{color:#fff;text-shadow:0 3px 22px rgba(0,0,0,.5)}
+#mvx-orbit .mvx-center .cb span{color:var(--yellow)}
+#mvx-orbit .mvx-center .cs{color:#fff;opacity:.85}
+#mvx-tunnel .mvx-cap{color:#fff}
+</style>
 </head>
 <body class="notranslate">
 <div id="loader"><div class="lg">MNAR <span>PARK</span></div><div class="bar"><i id="loadbar"></i></div><div style="color:#8fb3da;font-size:12px;letter-spacing:.26em">TANGER · CAP MALABATA</div></div>
@@ -276,6 +298,73 @@ footer{padding-bottom:120px}
     <a class="btn" href="#billets">Acheter vos billets</a>
   </div>
 </header>
+<!-- ===== VERTEX MOTION PACK × MNAR PARK ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<clipPath id="mvxLensClip" clipPathUnits="objectBoundingBox"><path d="M0,0.16 Q0.5,0.34 1,0.16 L1,0.84 Q0.5,0.66 0,0.84 Z"/></clipPath>
+<linearGradient id="mvxWL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#19a7e0"/><stop offset=".55" stop-color="#0756c9"/><stop offset="1" stop-color="#04265e"/></linearGradient>
+<linearGradient id="mvxWR" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc61a"/><stop offset=".55" stop-color="#f43f2f"/><stop offset="1" stop-color="#7a0e02"/></linearGradient>
+</defs></svg>
+
+<div id="mouvement">
+  <div class="mvx-bg"><video autoplay muted loop playsinline preload="auto" poster="img/hero.jpg"><source src="hero-film.mp4" type="video/mp4"></video></div>
+  <div class="mvx-head">
+    <div class="k">Vertex Motion Pack</div>
+    <h2>Le parc <span>en mouvement</span></h2>
+    <p>Six sections animées au scroll — tunnel 3D, orbite, collage, ruban fisheye, panneaux liquides et cascade — appliquées aux photos réelles du parc. Faites défiler.</p>
+  </div>
+
+  <section class="mvx-scene" id="mvx-tunnel" data-name="Tunnel" style="height:280vh">
+    <div class="mvx-stage">
+      <div class="mvx-tag">Section<b>TUNNEL 3D</b></div><div class="mvx-idx">LES ATTRACTIONS DÉFILANT</div>
+      <div class="mvx-vanish"></div><div class="mvx-cap">Le scroll fait voler la caméra entre les attractions</div>
+    </div>
+  </section>
+
+  <section class="mvx-scene" id="mvx-orbit" data-name="Orbit" style="height:260vh">
+    <div class="mvx-stage">
+      <div class="mvx-tag">Section<b>ORBIT</b></div><div class="mvx-idx">TOUTES LES ACTIVITÉS</div>
+      <div class="mvx-center"><div class="cb">MNAR<br><span>PARK</span></div><div class="cs">L'anneau tourne avec le scroll</div></div>
+    </div>
+  </section>
+
+  <section class="mvx-scene" id="mvx-scatter" data-name="Scatter">
+    <div class="mvx-wrap"><div class="mvx-stage">
+      <div class="mvx-tag">Section<b>SCATTER</b></div><div class="mvx-idx">COLLAGE PARALLAXE</div>
+      <div class="mvx-blk" data-sp="1.5" data-r="-4" style="left:8%;top:16%;width:24vmin;height:30vmin;background-image:url(img/pool.jpg)"><i>Piscines</i></div>
+      <div class="mvx-blk" data-sp="0.7" data-r="2" style="left:38%;top:12%;width:22vmin;height:26vmin;background-image:url(img/funnel.jpg)"><i>Le Funnel</i></div>
+      <div class="mvx-blk card" data-sp="1.9" data-r="5" style="left:68%;top:14%;width:17vmin;height:17vmin"><div><div class="p">220 DH</div><div class="l">Adulte</div></div></div>
+      <div class="mvx-blk" data-sp="0.9" data-r="3" style="left:14%;top:52%;width:20vmin;height:24vmin;background-image:url(img/racer.jpg)"><i>Racer</i></div>
+      <div class="mvx-blk card" data-sp="1.2" data-r="-2" style="left:42%;top:50%;width:17vmin;height:17vmin"><div><div class="p">120 DH</div><div class="l">Enfant −120 cm</div></div></div>
+      <div class="mvx-blk" data-sp="1.7" data-r="4" style="left:66%;top:48%;width:23vmin;height:27vmin;background-image:url(img/sunset.jpg)"><i>Coucher de soleil</i></div>
+      <div class="mvx-blk txt" data-sp="2.1" data-r="-5" style="left:30%;top:80%;width:24vmin;height:13vmin">Ouvert tous les jours<br>07:00 – 23:00</div>
+      <div class="mvx-blk card" data-sp="1.4" data-r="3" style="left:62%;top:79%;width:15vmin;height:15vmin"><div><div class="p">40 DH</div><div class="l">Transat</div></div></div>
+    </div></div>
+  </section>
+
+  <section class="mvx-scene" id="mvx-fisheye" data-name="Reel Flux" style="height:260vh">
+    <div class="mvx-stage">
+      <div class="mvx-tag">Section<b>REEL FLUX</b></div><div class="mvx-idx">PANORAMA DU PARC</div>
+      <div class="mvx-lens"><div class="mvx-track" id="mvxFluxTrack"></div></div>
+    </div>
+  </section>
+
+  <section class="mvx-scene" id="mvx-wavy" data-name="Wavy" style="height:240vh">
+    <div class="mvx-stage">
+      <div class="mvx-tag">Section<b>WAVY PANELS</b></div><div class="mvx-idx">BORDS LIQUIDES</div>
+      <svg class="mvx-waves" preserveAspectRatio="none" viewBox="0 0 100 100" aria-hidden="true">
+        <path id="mvxWaveL" fill="url(#mvxWL)"></path><path id="mvxWaveR" fill="url(#mvxWR)"></path>
+      </svg>
+      <div class="mvx-centerCard" id="mvxCenterCard" style="background-image:url(img/funnel.jpg)"><i>Le Funnel</i></div>
+    </div>
+  </section>
+
+  <section class="mvx-scene" id="mvx-cascade" data-name="Cascade" style="height:260vh">
+    <div class="mvx-stage">
+      <div class="mvx-tag">Section<b>CASCADE</b></div><div class="mvx-idx">LES ACTIVITÉS EN DIAGONALE</div>
+    </div>
+  </section>
+</div>
+<!-- ===== /VERTEX MOTION PACK ===== -->
 
 <div class="marquee"><div class="track" id="mqtrack"></div></div>
 
@@ -413,72 +502,7 @@ footer{padding-bottom:120px}
 </section>
 
 
-<!-- ===== VERTEX MOTION PACK × MNAR PARK ===== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<clipPath id="mvxLensClip" clipPathUnits="objectBoundingBox"><path d="M0,0.16 Q0.5,0.34 1,0.16 L1,0.84 Q0.5,0.66 0,0.84 Z"/></clipPath>
-<linearGradient id="mvxWL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#19a7e0"/><stop offset=".55" stop-color="#0756c9"/><stop offset="1" stop-color="#04265e"/></linearGradient>
-<linearGradient id="mvxWR" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc61a"/><stop offset=".55" stop-color="#f43f2f"/><stop offset="1" stop-color="#7a0e02"/></linearGradient>
-</defs></svg>
 
-<div id="mouvement">
-  <div class="mvx-head">
-    <div class="k">Vertex Motion Pack</div>
-    <h2>Le parc <span>en mouvement</span></h2>
-    <p>Six sections animées au scroll — tunnel 3D, orbite, collage, ruban fisheye, panneaux liquides et cascade — appliquées aux photos réelles du parc. Faites défiler.</p>
-  </div>
-
-  <section class="mvx-scene" id="mvx-tunnel" data-name="Tunnel" style="height:280vh">
-    <div class="mvx-stage">
-      <div class="mvx-tag">Section<b>TUNNEL 3D</b></div><div class="mvx-idx">LES ATTRACTIONS DÉFILANT</div>
-      <div class="mvx-vanish"></div><div class="mvx-cap">Le scroll fait voler la caméra entre les attractions</div>
-    </div>
-  </section>
-
-  <section class="mvx-scene" id="mvx-orbit" data-name="Orbit" style="height:260vh">
-    <div class="mvx-stage">
-      <div class="mvx-tag">Section<b>ORBIT</b></div><div class="mvx-idx">TOUTES LES ACTIVITÉS</div>
-      <div class="mvx-center"><div class="cb">MNAR<br><span>PARK</span></div><div class="cs">L'anneau tourne avec le scroll</div></div>
-    </div>
-  </section>
-
-  <section class="mvx-scene" id="mvx-scatter" data-name="Scatter">
-    <div class="mvx-wrap"><div class="mvx-stage">
-      <div class="mvx-tag">Section<b>SCATTER</b></div><div class="mvx-idx">COLLAGE PARALLAXE</div>
-      <div class="mvx-blk" data-sp="1.5" data-r="-4" style="left:8%;top:16%;width:24vmin;height:30vmin;background-image:url(img/pool.jpg)"><i>Piscines</i></div>
-      <div class="mvx-blk" data-sp="0.7" data-r="2" style="left:38%;top:12%;width:22vmin;height:26vmin;background-image:url(img/funnel.jpg)"><i>Le Funnel</i></div>
-      <div class="mvx-blk card" data-sp="1.9" data-r="5" style="left:68%;top:14%;width:17vmin;height:17vmin"><div><div class="p">220 DH</div><div class="l">Adulte</div></div></div>
-      <div class="mvx-blk" data-sp="0.9" data-r="3" style="left:14%;top:52%;width:20vmin;height:24vmin;background-image:url(img/racer.jpg)"><i>Racer</i></div>
-      <div class="mvx-blk card" data-sp="1.2" data-r="-2" style="left:42%;top:50%;width:17vmin;height:17vmin"><div><div class="p">120 DH</div><div class="l">Enfant −120 cm</div></div></div>
-      <div class="mvx-blk" data-sp="1.7" data-r="4" style="left:66%;top:48%;width:23vmin;height:27vmin;background-image:url(img/sunset.jpg)"><i>Coucher de soleil</i></div>
-      <div class="mvx-blk txt" data-sp="2.1" data-r="-5" style="left:30%;top:80%;width:24vmin;height:13vmin">Ouvert tous les jours<br>07:00 – 23:00</div>
-      <div class="mvx-blk card" data-sp="1.4" data-r="3" style="left:62%;top:79%;width:15vmin;height:15vmin"><div><div class="p">40 DH</div><div class="l">Transat</div></div></div>
-    </div></div>
-  </section>
-
-  <section class="mvx-scene" id="mvx-fisheye" data-name="Reel Flux" style="height:260vh">
-    <div class="mvx-stage">
-      <div class="mvx-tag">Section<b>REEL FLUX</b></div><div class="mvx-idx">PANORAMA DU PARC</div>
-      <div class="mvx-lens"><div class="mvx-track" id="mvxFluxTrack"></div></div>
-    </div>
-  </section>
-
-  <section class="mvx-scene" id="mvx-wavy" data-name="Wavy" style="height:240vh">
-    <div class="mvx-stage">
-      <div class="mvx-tag">Section<b>WAVY PANELS</b></div><div class="mvx-idx">BORDS LIQUIDES</div>
-      <svg class="mvx-waves" preserveAspectRatio="none" viewBox="0 0 100 100" aria-hidden="true">
-        <path id="mvxWaveL" fill="url(#mvxWL)"></path><path id="mvxWaveR" fill="url(#mvxWR)"></path>
-      </svg>
-      <div class="mvx-centerCard" id="mvxCenterCard" style="background-image:url(img/funnel.jpg)"><i>Le Funnel</i></div>
-    </div>
-  </section>
-
-  <section class="mvx-scene" id="mvx-cascade" data-name="Cascade" style="height:260vh">
-    <div class="mvx-stage">
-      <div class="mvx-tag">Section<b>CASCADE</b></div><div class="mvx-idx">LES ACTIVITÉS EN DIAGONALE</div>
-    </div>
-  </section>
-</div>
-<!-- ===== /VERTEX MOTION PACK ===== -->
 <section class="finale"><img class="bg2" src="img/sunset.jpg" alt="Mnar Park au couchant, photo réelle"><div class="in2"><h2>Venez le vivre <span class="y">pour de vrai.</span></h2><p>Les photos donnent envie. Les descentes, elles, ne se racontent pas — elles se vivent, face à la baie de Tanger.</p><a class="btn" href="#billets">Réserver votre journée</a></div></section>
 
 <footer>
